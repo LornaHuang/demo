@@ -84,7 +84,7 @@
             <el-row style="font-size: 14px; margin-top: 5px">
               <el-col :span="1"><div style="margin: 3px 2px 0 0;">前尺</div></el-col>
               <el-col :span="4"><el-input v-model="dataImport.frontOilHeight" style="padding-right: 5px"/></el-col>
-              <el-col :span="4"><el-input v-model="dataImport.frontBottomWater" style="padding-right: 5px" disabled /></el-col>
+              <el-col :span="4"><el-input v-model="dataImport.frontBottomWater" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.frontOilTemperature" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.frontStandardDensity" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.frontQuantity" style="padding-right: 5px" /></el-col>
@@ -92,7 +92,7 @@
             <el-row style="font-size: 14px; margin-top: 5px">
               <el-col :span="1"><div style="margin: 3px 2px 0 0;">后尺</div></el-col>
               <el-col :span="4"><el-input v-model="dataImport.backOilHeight" style="padding-right: 5px"/></el-col>
-              <el-col :span="4"><el-input v-model="dataImport.backBottomWater" style="padding-right: 5px" disabled /></el-col>
+              <el-col :span="4"><el-input v-model="dataImport.backBottomWater" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.backOilTemperature" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.backStandardDensity" style="padding-right: 5px" /></el-col>
               <el-col :span="4"><el-input v-model="dataImport.backQuantity" style="padding-right: 5px" /></el-col>
@@ -201,13 +201,16 @@ export default {
       currentIndex: 0,
       reportInfo: {
         reportNum: '',
-        oilType: '液态化工品',
+        oilType: '',
         liquidChemicals: '',
         volCorrection: '',
       },
       oilTypeList: [{
         label: '液态化工品',
         value: '液态化工品',
+      },{
+        label: '成品油',
+        value: '成品油',
       }],
       chemicalList: [{
         label: '对二甲苯',
@@ -379,7 +382,7 @@ export default {
         //修正收付良
         this.correctArr.forEach((item) => {
           if(parseFloat(this.dataImport.backOilHeight) / 1000 > parseFloat(item.first) && parseFloat(this.dataImport.backOilHeight)/1000 < parseFloat(item.last)) {
-            this.totalResult.correctReceivedPaid = (parseFloat(this.dataImport.backOilHeight) * item.level).toFixed(3);
+            this.totalResult.correctReceivedPaid = (parseFloat(this.calResult.backPureOil) * item.level).toFixed(3);
           }
         })
       // }
