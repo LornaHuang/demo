@@ -382,7 +382,7 @@ export default {
         //修正收付良
         this.correctArr.forEach((item) => {
           if(parseFloat(this.dataImport.backOilHeight) / 1000 > parseFloat(item.first) && parseFloat(this.dataImport.backOilHeight)/1000 < parseFloat(item.last)) {
-            this.totalResult.correctReceivedPaid = (parseFloat(this.calResult.backPureOil) * item.level).toFixed(3);
+            this.totalResult.correctReceivedPaid = (parseFloat(this.totalResult.totalPureOil) * item.level).toFixed(3);
           }
         })
       // }
