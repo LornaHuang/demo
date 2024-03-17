@@ -11,10 +11,6 @@ export default {
             num: '457057',
             jylxz: '0',
         },{
-            ypgd: '40',
-            num: '535267',
-            jylxz: '1',
-        },{
             ypgd: '188',
             num: '950425',
             jylxz: '7',
@@ -22,10 +18,6 @@ export default {
             ypgd: '2233',
             num: '6731440',
             jylxz: '1046',
-        },{
-            ypgd: '2234',
-            num: '6734268',
-            jylxz: '1047',
         },{
             ypgd: '2371',
             num: '7121672',
@@ -38,10 +30,6 @@ export default {
     },{
         tankNum: 'F-7001B',
         tankInfo: [{
-            ypgd: '8',
-            num: '483774',
-            jylxz: '0',
-        },{
             ypgd: '170',
             num: '938532',
             jylxz: '6',
@@ -68,6 +56,28 @@ export default {
             ypgd: '1166',
             num: '3714185',
             jylxz: '286',
+        }]
+    },{
+        tankNum: 'F-7001D',
+        tankInfo: [{
+            ypgd: '4012',
+            num: '11713998',
+            jylxz: '3371',
+        },{
+            ypgd: '7938',
+            num: '22810641',
+            jylxz: '13200',
+        }]
+    },{
+        tankNum: 'F-7002',
+        tankInfo: [{
+            ypgd: '3842',
+            num: '384878',
+            jylxz: '54',
+        },{
+            ypgd: '4114',
+            num: '410699',
+            jylxz: '61',
         }]
     }],
 
