@@ -6,12 +6,12 @@
         <div class="title">工作信息</div>
         <div class="content">
           <el-form :inline="true" :model="reportInfo">
-            <el-form-item label="工作编号">
-              <el-input v-model="reportInfo.reportNum" placeholder="" style="width: 120px"/>
-            </el-form-item>
-            <el-form-item label-width="50px">
-              <el-button type="default" @click="refreshNum">刷新编号</el-button>
-            </el-form-item>
+<!--            <el-form-item label="工作编号">-->
+<!--              <el-input v-model="reportInfo.reportNum" placeholder="" style="width: 120px"/>-->
+<!--            </el-form-item>-->
+<!--            <el-form-item label-width="50px">-->
+<!--              <el-button type="default" @click="refreshNum">刷新编号</el-button>-->
+<!--            </el-form-item>-->
             <el-form-item label="油品种类" label-width="100px">
               <el-select v-model="reportInfo.oilType" placeholder="请选择" style="width: 150px">
                 <el-option
@@ -31,7 +31,7 @@
                     :value="item.value"
                 />
               </el-select>
-              <el-select v-model="reportInfo.volCorrection" placeholder="请选择" style="width: 150px">
+              <el-select v-model="reportInfo.volCorrection" placeholder="请选择" style="width: 150px;margin-left: 10px;">
                 <el-option
                     v-for="item in volCorrectionList"
                     :key="item.value"
@@ -59,9 +59,9 @@
                   />
                 </el-select>
               </el-form-item>
-              <el-form-item label="检尺时间">
-                <el-date-picker v-model="dataImport.checkTime"></el-date-picker>
-              </el-form-item>
+<!--              <el-form-item label="检尺时间">-->
+<!--                <el-date-picker v-model="dataImport.checkTime"></el-date-picker>-->
+<!--              </el-form-item>-->
               <el-form-item label="油罐类型">
                 <el-radio-group v-model="dataImport.tankType">
                   <el-radio value="保温罐">保温罐</el-radio>
@@ -184,11 +184,6 @@
         </div>
       </div>
     </div>
-<!--    <div class="bottomBtn">-->
-<!--      <el-button>保存</el-button>-->
-<!--      <el-button>生成Excel</el-button>-->
-<!--      <el-button>关闭</el-button>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -452,6 +447,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 330px;
 }
 .dataContent {
   display: flex;
@@ -476,5 +472,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.el-select__input-wrapper.is-hidden {
+  position: relative;
 }
 </style>

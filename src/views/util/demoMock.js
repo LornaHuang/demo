@@ -82,3 +82,12 @@ export default {
     }],
 
 }
+
+export function getNowDate() {
+    const today = new Date().toLocaleString()
+    let dateStr = today.split(' ')[0] + '/'
+    dateStr = dateStr.replace('/', '年')
+    dateStr = dateStr.replace('/', '月')
+    dateStr = dateStr.replace('/', '日')
+    return `${dateStr}`
+}
